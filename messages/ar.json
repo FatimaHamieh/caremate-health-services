@@ -1,0 +1,83 @@
+{
+  "nav": {
+    "home": "الرئيسية",
+    "about": "من نحن",
+    "services": "خدماتنا",
+    "team": "فريقنا",
+    "contact": "تواصل معنا"
+  },
+  "common": {
+    "bookWhatsApp": "احجز عبر واتساب",
+    "learnMore": "اعرف المزيد",
+    "viewAllServices": "عرض جميع الخدمات",
+    "getInTouch": "تواصل معنا",
+    "readMore": "قراءة المزيد"
+  },
+  "home": {
+    "heroEyebrow": "رعاية صحية منزلية بمفهوم جديد",
+    "heroCta": "احجز موعداً",
+    "aboutEyebrow": "من نحن",
+    "aboutCta": "المزيد عنا",
+    "servicesEyebrow": "ما نقدمه",
+    "servicesTitle": "رعاية تصل إليك",
+    "servicesSubtitle": "من التمريض السريري إلى الإرشاد الصحي، فريقنا يقدّم رعاية صحية احترافية مباشرة إلى منزلك.",
+    "founderEyebrow": "تعرّف على المؤسس",
+    "founderCta": "تعرّف على الفريق بالكامل",
+    "ctaTitle": "جاهز لتشعر بتحسن، في منزلك؟",
+    "ctaSubtitle": "راسلنا عبر واتساب وسنتولى الباقي.",
+    "statsCareValue": "100%",
+    "statsCareLabel": "رعاية شخصية",
+    "statsCareSub": "كل خطة مصممة خصيصاً لك",
+    "statsExperienceValue": "+10",
+    "statsExperienceLabel": "سنوات خبرة",
+    "statsExperienceSub": "في الرعاية الحرجة والسريرية",
+    "statsAreaValue": "لبنان",
+    "statsAreaLabel": "تغطية شاملة",
+    "statsAreaSub": "زيارات منزلية أينما كنت"
+  },
+  "about": {
+    "title": "عن كير ميت",
+    "eyebrow": "قصتنا",
+    "visionTitle": "رؤيتنا",
+    "missionTitle": "رسالتنا",
+    "valuesTitle": "قيمنا",
+    "valuesSubtitle": "المبادئ التي توجّه كل زيارة، وكل مريض، في كل مرة."
+  },
+  "services": {
+    "title": "خدماتنا",
+    "eyebrow": "كيف يمكننا المساعدة",
+    "subtitle": "خدمات تمريض وعافية شاملة تُقدَّم أينما كنت.",
+    "nursingTitle": "الخدمات التمريضية",
+    "wellnessTitle": "خدمات العافية غير التمريضية",
+    "bookThisService": "احجز هذه الخدمة"
+  },
+  "team": {
+    "title": "فريقنا",
+    "eyebrow": "الأشخاص وراء كير ميت",
+    "founderTitle": "تعرّف على المؤسس",
+    "founderRole": "المؤسس والمدير السريري",
+    "teamTitle": "فريق الرعاية لدينا",
+    "teamSubtitle": "شبكة من المتخصصين الصحيين ذوي الخبرة، ملتزمون بتقديم رعاية عالية الجودة أينما دعت الحاجة."
+  },
+  "contact": {
+    "title": "تواصل معنا",
+    "eyebrow": "نحن هنا لمساعدتك",
+    "subtitle": "لديك سؤال أو جاهز لحجز خدمة؟ تواصل معنا عبر واتساب وسيرد فريقنا في أقرب وقت.",
+    "whatsappTitle": "تواصل عبر واتساب",
+    "whatsappSubtitle": "أسرع طريقة لحجز موعد أو طرح سؤال.",
+    "areaTitle": "منطقة الخدمة",
+    "areaText": "نفخر بخدمة المرضى والعائلات في جميع أنحاء لبنان.",
+    "hoursTitle": "التوفر",
+    "hoursText": "تواصل معنا عبر واتساب للتحقق من التوفر في الوقت الذي تريده."
+  },
+  "footer": {
+    "tagline": "نجلب الرعاية الصحية إلى باب منزلك",
+    "quickLinks": "روابط سريعة",
+    "servicesLinks": "الخدمات",
+    "getInTouch": "تواصل معنا",
+    "rights": "جميع الحقوق محفوظة."
+  },
+  "fab": {
+    "label": "تحدث معنا"
+  }
+}

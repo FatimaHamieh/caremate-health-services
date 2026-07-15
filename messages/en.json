@@ -1,0 +1,83 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "team": "Our Team",
+    "contact": "Contact"
+  },
+  "common": {
+    "bookWhatsApp": "Book via WhatsApp",
+    "learnMore": "Learn More",
+    "viewAllServices": "View All Services",
+    "getInTouch": "Get in Touch",
+    "readMore": "Read More"
+  },
+  "home": {
+    "heroEyebrow": "Home Healthcare, Reimagined",
+    "heroCta": "Book an Appointment",
+    "aboutEyebrow": "Who We Are",
+    "aboutCta": "More About Us",
+    "servicesEyebrow": "What We Offer",
+    "servicesTitle": "Care That Comes to You",
+    "servicesSubtitle": "From clinical nursing to wellness coaching, our team brings professional healthcare directly to your home.",
+    "founderEyebrow": "Meet the Founder",
+    "founderCta": "Meet the Full Team",
+    "ctaTitle": "Ready to feel better, at home?",
+    "ctaSubtitle": "Message us on WhatsApp and we'll take care of the rest.",
+    "statsCareValue": "100%",
+    "statsCareLabel": "Personalized Care",
+    "statsCareSub": "Every plan tailored to you",
+    "statsExperienceValue": "10+",
+    "statsExperienceLabel": "Years of Experience",
+    "statsExperienceSub": "Critical & clinical care background",
+    "statsAreaValue": "Lebanon",
+    "statsAreaLabel": "Nationwide Coverage",
+    "statsAreaSub": "Home visits wherever you are"
+  },
+  "about": {
+    "title": "About CareMate",
+    "eyebrow": "Our Story",
+    "visionTitle": "Our Vision",
+    "missionTitle": "Our Mission",
+    "valuesTitle": "Our Values",
+    "valuesSubtitle": "The principles that guide every visit, every patient, every time."
+  },
+  "services": {
+    "title": "Our Services",
+    "eyebrow": "How We Help",
+    "subtitle": "Comprehensive nursing and wellness services delivered wherever you are.",
+    "nursingTitle": "Nursing Services",
+    "wellnessTitle": "Non-Nursing & Wellness Services",
+    "bookThisService": "Book This Service"
+  },
+  "team": {
+    "title": "Our Team",
+    "eyebrow": "The People Behind CareMate",
+    "founderTitle": "Meet the Founder",
+    "founderRole": "Founder & Clinical Director",
+    "teamTitle": "Our Care Team",
+    "teamSubtitle": "A network of experienced healthcare professionals dedicated to bringing high-quality care wherever it's needed."
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "eyebrow": "We're Here to Help",
+    "subtitle": "Have a question or ready to book a service? Reach out on WhatsApp and our team will respond promptly.",
+    "whatsappTitle": "Chat on WhatsApp",
+    "whatsappSubtitle": "The fastest way to book an appointment or ask a question.",
+    "areaTitle": "Service Area",
+    "areaText": "Proudly serving patients and families across Lebanon.",
+    "hoursTitle": "Availability",
+    "hoursText": "Contact us on WhatsApp to check availability for your requested time."
+  },
+  "footer": {
+    "tagline": "Bringing Healthcare to Your Doorstep",
+    "quickLinks": "Quick Links",
+    "servicesLinks": "Services",
+    "getInTouch": "Get in Touch",
+    "rights": "All rights reserved."
+  },
+  "fab": {
+    "label": "Chat with us"
+  }
+}
