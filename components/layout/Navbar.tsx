@@ -1,12 +1,15 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
 import { useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { Menu, X, Heart, Globe } from 'lucide-react';
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
 import { siteConfig } from '@/content/site-config';
+import { ThemeToggle } from './ThemeToggle';
+import { LanguageSwitcher } from './LanguageSwitcher';
 import type { Locale } from '@/i18n/request';
 
 const navItems = [
@@ -17,26 +20,43 @@ const navItems = [
   { key: 'contact', href: '/contact' },
 ] as const;
 
-function switchLocalePath(pathname: string, target: Locale) {
-  const segments = pathname.split('/');
-  segments[1] = target;
-  return segments.join('/') || '/';
-}
+const darkModeLabel: Record<Locale, string> = {
+  en: 'Dark Mode',
+  ar: 'الوضع الداكن',
+  fr: 'Mode sombre',
+};
 
 export function Navbar() {
   const locale = useLocale() as Locale;
   const pathname = usePathname();
   const t = useTranslations('nav');
   const [open, setOpen] = useState(false);
-  const otherLocale: Locale = locale === 'en' ? 'ar' : 'en';
+  const [scrolled, setScrolled] = useState(false);
+
+  const { scrollY } = useScroll();
+  useMotionValueEvent(scrollY, 'change', (latest) => setScrolled(latest > 12));
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/80 backdrop-blur-md dark:border-slate-800/70 dark:bg-slate-950/80">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
-        <Link href={`/${locale}`} className="flex items-center gap-2 font-bold text-slate-900 dark:text-white">
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-600 text-white">
-            <Heart className="h-5 w-5" fill="currentColor" />
-          </span>
+    <header
+      className={`sticky top-0 z-40 border-b transition-all duration-300 ${
+        scrolled
+          ? 'border-slate-200/70 bg-white/95 shadow-md shadow-slate-900/5 backdrop-blur-md dark:border-slate-800/70 dark:bg-slate-950/95'
+          : 'border-transparent bg-white/80 backdrop-blur-md dark:bg-slate-950/80'
+      }`}
+    >
+      <nav
+        className={`mx-auto flex max-w-6xl items-center justify-between px-4 transition-all duration-300 sm:px-6 ${
+          scrolled ? 'py-2.5' : 'py-4'
+        }`}
+      >
+        <Link href={`/${locale}`} className="group flex items-center gap-2 font-bold text-slate-900 dark:text-white">
+          <motion.span
+            whileHover={{ rotate: -8, scale: 1.08 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 12 }}
+            className="flex h-9 w-9 shrink-0 items-center justify-center"
+          >
+            <Image src="/images/logo-icon.png" alt={siteConfig.brandName} width={36} height={36} className="h-full w-full object-contain" priority />
+          </motion.span>
           <span className="text-lg">{siteConfig.brandName}</span>
         </Link>
 
@@ -68,13 +88,11 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-3">
-          <Link
-            href={switchLocalePath(pathname, otherLocale)}
-            className="hidden items-center gap-1.5 rounded-full border border-slate-200 px-3 py-1.5 text-sm font-medium text-slate-700 transition-colors hover:border-brand-300 hover:text-brand-700 dark:border-slate-700 dark:text-slate-200 sm:flex"
-          >
-            <Globe className="h-4 w-4" />
-            {otherLocale === 'ar' ? 'العربية' : 'English'}
-          </Link>
+          <LanguageSwitcher className="hidden sm:block" />
+
+          <div className="hidden sm:block">
+            <ThemeToggle />
+          </div>
 
           <button
             type="button"
@@ -106,14 +124,16 @@ export function Navbar() {
                   {t(item.key)}
                 </Link>
               ))}
-              <Link
-                href={switchLocalePath(pathname, otherLocale)}
-                onClick={() => setOpen(false)}
-                className="mt-2 flex items-center gap-1.5 rounded-lg px-3 py-2.5 text-sm font-medium text-brand-700 dark:text-brand-300"
-              >
-                <Globe className="h-4 w-4" />
-                {otherLocale === 'ar' ? 'العربية' : 'English'}
-              </Link>
+              <div className="mt-2 flex items-center justify-between rounded-lg px-3 py-2.5">
+                <span className="text-sm font-medium text-slate-700 dark:text-slate-200">
+                  {darkModeLabel[locale]}
+                </span>
+                <ThemeToggle />
+              </div>
+
+              <div className="mt-1 px-3 py-1">
+                <LanguageSwitcher />
+              </div>
             </div>
           </motion.div>
         )}

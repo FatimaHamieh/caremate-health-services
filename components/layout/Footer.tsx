@@ -1,6 +1,6 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
-import { Heart } from 'lucide-react';
 import { siteConfig } from '@/content/site-config';
 import type { Locale } from '@/i18n/request';
 
@@ -11,6 +11,12 @@ const links = [
   { key: 'team', href: '/team' },
   { key: 'contact', href: '/contact' },
 ] as const;
+
+const countryName: Record<Locale, string> = {
+  en: 'Lebanon',
+  ar: 'لبنان',
+  fr: 'Liban',
+};
 
 export function Footer() {
   const locale = useLocale() as Locale;
@@ -23,8 +29,8 @@ export function Footer() {
         <div className="grid gap-10 sm:grid-cols-3">
           <div>
             <div className="flex items-center gap-2 font-bold text-slate-900 dark:text-white">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-600 text-white">
-                <Heart className="h-5 w-5" fill="currentColor" />
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center">
+                <Image src="/images/logo-icon.png" alt={siteConfig.brandName} width={36} height={36} className="h-full w-full object-contain" />
               </span>
               <span>{siteConfig.brandName}</span>
             </div>
@@ -56,7 +62,7 @@ export function Footer() {
               {tf('getInTouch')}
             </h4>
             <p className="mt-4 text-sm text-slate-600 dark:text-slate-300">
-              {locale === 'ar' ? 'لبنان' : 'Lebanon'}
+              {countryName[locale]}
             </p>
           </div>
         </div>

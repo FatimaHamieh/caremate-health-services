@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Services",
+    "team": "Notre équipe",
+    "contact": "Contact"
+  },
+  "common": {
+    "bookWhatsApp": "Réserver via WhatsApp",
+    "learnMore": "En savoir plus",
+    "viewAllServices": "Voir tous les services",
+    "getInTouch": "Contactez-nous",
+    "readMore": "Lire la suite"
+  },
+  "home": {
+    "heroCta": "Prendre rendez-vous",
+    "aboutEyebrow": "Qui sommes-nous",
+    "aboutCta": "En savoir plus sur nous",
+    "whyChooseEyebrow": "Notre atout",
+    "whyChooseTitle": "Pourquoi choisir CareMate ?",
+    "whyChooseSubtitle": "La différence que des soins à domicile compatissants et professionnels peuvent apporter.",
+    "servicesEyebrow": "Ce que nous offrons",
+    "servicesTitle": "Des soins qui viennent à vous",
+    "servicesSubtitle": "Des soins infirmiers cliniques au coaching bien-être, notre équipe apporte des soins de santé professionnels directement chez vous.",
+    "founderEyebrow": "Rencontrez le fondateur",
+    "founderCta": "Rencontrer toute l'équipe",
+    "ctaTitle": "Prêt à vous sentir mieux, chez vous ?",
+    "ctaSubtitle": "Envoyez-nous un message sur WhatsApp et nous nous occupons du reste.",
+    "statsCareValue": "100 %",
+    "statsCareLabel": "Soins personnalisés",
+    "statsCareSub": "Chaque plan est conçu pour vous",
+    "statsExperienceValue": "10+",
+    "statsExperienceLabel": "Années d'expérience",
+    "statsExperienceSub": "Expertise en soins critiques et cliniques",
+    "statsAreaValue": "Liban",
+    "statsAreaLabel": "Couverture nationale",
+    "statsAreaSub": "Visites à domicile où que vous soyez"
+  },
+  "about": {
+    "title": "À propos de CareMate",
+    "eyebrow": "Notre histoire",
+    "valuesTitle": "Nos valeurs",
+    "valuesSubtitle": "Les principes qui guident chaque visite, chaque patient, à chaque fois."
+  },
+  "services": {
+    "title": "Nos services",
+    "eyebrow": "Comment nous aidons",
+    "subtitle": "Des services complets de soins infirmiers et de bien-être, livrés où que vous soyez.",
+    "nursingTitle": "Services infirmiers",
+    "wellnessTitle": "Services de bien-être et non infirmiers",
+    "bookThisService": "Réserver ce service",
+    "comingSoon": "Bientôt disponible"
+  },
+  "team": {
+    "title": "Notre équipe",
+    "eyebrow": "Les personnes derrière CareMate",
+    "founderTitle": "Rencontrez le fondateur",
+    "founderRole": "Fondateur et directeur clinique",
+    "teamTitle": "Notre équipe de soins",
+    "teamSubtitle": "CareMate Health Services réunit un réseau de professionnels de santé expérimentés, dédiés à offrir des soins de haute qualité partout où le besoin se fait sentir.",
+    "teamIncludes": "Notre équipe comprend :"
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "eyebrow": "Nous sommes là pour vous aider",
+    "subtitle": "Une question ou prêt à réserver un service ? Contactez-nous sur WhatsApp et notre équipe vous répondra rapidement.",
+    "whatsappTitle": "Discuter sur WhatsApp",
+    "whatsappSubtitle": "Le moyen le plus rapide de prendre rendez-vous ou de poser une question."
+  },
+  "footer": {
+    "tagline": "Les soins de santé livrés à votre porte",
+    "quickLinks": "Liens rapides",
+    "servicesLinks": "Services",
+    "getInTouch": "Contactez-nous",
+    "rights": "Tous droits réservés."
+  },
+  "fab": {
+    "label": "Discutez avec nous"
+  }
+}

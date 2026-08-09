@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { ThemeProvider } from 'next-themes';
 import { Inter, Cairo } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, unstable_setRequestLocale } from 'next-intl/server';
@@ -8,6 +9,7 @@ import { siteConfig } from '@/content/site-config';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { WhatsAppFAB } from '@/components/layout/WhatsAppFAB';
+import { ScrollProgress } from '@/components/layout/ScrollProgress';
 import '../globals.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
@@ -36,14 +38,19 @@ export default async function LocaleLayout({
   const dir = locale === 'ar' ? 'rtl' : 'ltr';
 
   return (
-    <html lang={locale} dir={dir}>
-      <body className={`${inter.variable} ${cairo.variable} ${locale === 'ar' ? 'font-arabic' : 'font-sans'} bg-white text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-50`}>
-        <NextIntlClientProvider messages={messages}>
-          <Navbar />
-          <main className="min-h-screen">{children}</main>
-          <Footer />
-          <WhatsAppFAB />
-        </NextIntlClientProvider>
+    <html lang={locale} dir={dir} suppressHydrationWarning>
+      <body
+        className={`${inter.variable} ${cairo.variable} ${locale === 'ar' ? 'font-arabic' : 'font-sans'} bg-white text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-50`}
+      >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <NextIntlClientProvider messages={messages}>
+            <ScrollProgress />
+            <Navbar />
+            <main className="min-h-screen">{children}</main>
+            <Footer />
+            <WhatsAppFAB />
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

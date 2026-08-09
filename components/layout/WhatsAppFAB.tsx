@@ -10,7 +10,8 @@ import type { Locale } from '@/i18n/request';
 export function WhatsAppFAB() {
   const locale = useLocale() as Locale;
   const t = useTranslations('fab');
-  const href = buildWhatsAppLink(siteConfig.whatsappDefaultMessage[locale]);
+  const pageUrl = typeof window !== 'undefined' ? window.location.href : undefined;
+  const href = buildWhatsAppLink(siteConfig.whatsappDefaultMessage[locale], pageUrl);
 
   return (
     <motion.a
@@ -25,7 +26,8 @@ export function WhatsAppFAB() {
       whileTap={{ scale: 0.94 }}
       className="fixed bottom-6 end-6 z-50 flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3.5 text-white shadow-lg shadow-[#25D366]/30"
     >
-      <span className="absolute inset-0 -z-10 rounded-full bg-[#25D366] animate-pulse-slow" />
+      <span className="pointer-events-none absolute inset-0 -z-10 rounded-full bg-[#25D366] animate-pulse-ring" />
+      <span className="pointer-events-none absolute inset-0 -z-10 rounded-full bg-[#25D366] animate-pulse-ring-delayed" />
       <MessageCircle className="h-5 w-5" />
       <span className="hidden text-sm font-semibold sm:inline">{t('label')}</span>
     </motion.a>

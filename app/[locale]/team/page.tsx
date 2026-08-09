@@ -1,9 +1,11 @@
+import Image from 'next/image';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import type { Locale } from '@/i18n/request';
 import { founder } from '@/content/founder';
 import { teamRoles } from '@/content/team';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
+import { PageHeaderBackground } from '@/components/ui/PageHeaderBackground';
 import { TeamGrid } from '@/components/team/TeamGrid';
 
 export default async function TeamPage({ params: { locale } }: { params: { locale: Locale } }) {
@@ -11,7 +13,9 @@ export default async function TeamPage({ params: { locale } }: { params: { local
   const t = await getTranslations('team');
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+    <div className="relative isolate overflow-hidden">
+      <PageHeaderBackground />
+      <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
       <SectionHeading eyebrow={t('eyebrow')} title={t('title')} />
 
       <AnimatedSection className="mt-16">
@@ -20,8 +24,8 @@ export default async function TeamPage({ params: { locale } }: { params: { local
         </span>
         <div className="mt-4 rounded-3xl bg-gradient-to-br from-slate-900 to-brand-950 p-8 text-white sm:p-12">
           <div className="flex flex-col items-start gap-8 sm:flex-row">
-            <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-full bg-brand-500 text-3xl font-bold">
-              {founder.name.split(' ').map((n) => n[0]).join('')}
+            <div className="relative h-40 w-40 shrink-0 overflow-hidden rounded-full ring-4 ring-white/10">
+              <Image src="/images/founder.jpg" alt={founder.name} fill sizes="160px" className="object-cover" />
             </div>
             <div>
               <h2 className="text-2xl font-bold sm:text-3xl">{founder.name}</h2>
@@ -44,9 +48,13 @@ export default async function TeamPage({ params: { locale } }: { params: { local
 
       <div className="mt-20">
         <SectionHeading title={t('teamTitle')} subtitle={t('teamSubtitle')} align="start" />
-        <div className="mt-10">
+        <p className="mt-6 text-sm font-semibold uppercase tracking-wide text-brand-600 dark:text-brand-400">
+          {t('teamIncludes')}
+        </p>
+        <div className="mt-6">
           <TeamGrid roles={teamRoles} locale={locale} />
         </div>
+      </div>
       </div>
     </div>
   );

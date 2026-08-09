@@ -11,17 +11,17 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          50: '#eefbf6',
-          100: '#d6f5e8',
-          200: '#aeead4',
-          300: '#7bd9bc',
-          400: '#48c2a0',
-          500: '#26a583',
-          600: '#18856b',
-          700: '#146a58',
-          800: '#125447',
-          900: '#10453b',
-          950: '#062720',
+          50: '#eff7fb',
+          100: '#dcedf6',
+          200: '#b9dbee',
+          300: '#8cc3e0',
+          400: '#57a3cb',
+          500: '#337fb0',
+          600: '#256493',
+          700: '#1f5178',
+          800: '#1e4363',
+          900: '#1c3a54',
+          950: '#112536',
         },
         coral: {
           50: '#fff3ed',
@@ -47,6 +47,10 @@ const config: Config = {
         float: 'float 6s ease-in-out infinite',
         'float-delayed': 'float 6s ease-in-out 2s infinite',
         'float-slow': 'float 8s ease-in-out 1s infinite',
+        'gradient-x': 'gradient-x 6s ease infinite',
+        sway: 'sway 10s ease-in-out infinite',
+        'pulse-ring': 'pulse-ring 2.2s cubic-bezier(0.4,0,0.6,1) infinite',
+        'pulse-ring-delayed': 'pulse-ring 2.2s cubic-bezier(0.4,0,0.6,1) 1.1s infinite',
       },
       keyframes: {
         blob: {
@@ -61,6 +65,19 @@ const config: Config = {
         float: {
           '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
           '50%': { transform: 'translateY(-16px) rotate(4deg)' },
+        },
+        'gradient-x': {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
+        sway: {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '50%': { transform: 'translateX(-2.5%)' },
+        },
+        'pulse-ring': {
+          '0%': { transform: 'scale(0.85)', opacity: '0.6' },
+          '70%': { transform: 'scale(1.7)', opacity: '0' },
+          '100%': { transform: 'scale(1.7)', opacity: '0' },
         },
       },
     },

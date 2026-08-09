@@ -11,10 +11,12 @@ export function ServiceGrid({
   services,
   locale,
   ctaLabel,
+  comingSoonLabel,
 }: {
   services: Service[];
   locale: Locale;
   ctaLabel: string;
+  comingSoonLabel?: string;
 }) {
   return (
     <motion.div
@@ -31,7 +33,16 @@ export function ServiceGrid({
           title={service.title[locale]}
           description={service.description[locale]}
           ctaLabel={ctaLabel}
-          onBook={() => buildServiceWhatsAppLink(service.title[locale], locale)}
+          onBook={() =>
+            buildServiceWhatsAppLink(
+              service.title[locale],
+              locale,
+              typeof window !== 'undefined' ? window.location.href : undefined
+            )
+          }
+          comingSoon={service.comingSoon}
+          comingSoonLabel={comingSoonLabel}
+          image={service.image}
         />
       ))}
     </motion.div>

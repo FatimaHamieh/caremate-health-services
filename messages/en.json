@@ -14,10 +14,12 @@
     "readMore": "Read More"
   },
   "home": {
-    "heroEyebrow": "Home Healthcare, Reimagined",
     "heroCta": "Book an Appointment",
     "aboutEyebrow": "Who We Are",
     "aboutCta": "More About Us",
+    "whyChooseEyebrow": "Our Advantage",
+    "whyChooseTitle": "Why Choose CareMate?",
+    "whyChooseSubtitle": "The difference compassionate, professional home care can make.",
     "servicesEyebrow": "What We Offer",
     "servicesTitle": "Care That Comes to You",
     "servicesSubtitle": "From clinical nursing to wellness coaching, our team brings professional healthcare directly to your home.",
@@ -38,8 +40,6 @@
   "about": {
     "title": "About CareMate",
     "eyebrow": "Our Story",
-    "visionTitle": "Our Vision",
-    "missionTitle": "Our Mission",
     "valuesTitle": "Our Values",
     "valuesSubtitle": "The principles that guide every visit, every patient, every time."
   },
@@ -49,7 +49,8 @@
     "subtitle": "Comprehensive nursing and wellness services delivered wherever you are.",
     "nursingTitle": "Nursing Services",
     "wellnessTitle": "Non-Nursing & Wellness Services",
-    "bookThisService": "Book This Service"
+    "bookThisService": "Book This Service",
+    "comingSoon": "Coming Soon"
   },
   "team": {
     "title": "Our Team",
@@ -57,18 +58,15 @@
     "founderTitle": "Meet the Founder",
     "founderRole": "Founder & Clinical Director",
     "teamTitle": "Our Care Team",
-    "teamSubtitle": "A network of experienced healthcare professionals dedicated to bringing high-quality care wherever it's needed."
+    "teamSubtitle": "CareMate Health Services brings together a network of experienced healthcare professionals dedicated to providing high-quality care wherever it is needed.",
+    "teamIncludes": "Our team includes:"
   },
   "contact": {
     "title": "Get in Touch",
     "eyebrow": "We're Here to Help",
     "subtitle": "Have a question or ready to book a service? Reach out on WhatsApp and our team will respond promptly.",
     "whatsappTitle": "Chat on WhatsApp",
-    "whatsappSubtitle": "The fastest way to book an appointment or ask a question.",
-    "areaTitle": "Service Area",
-    "areaText": "Proudly serving patients and families across Lebanon.",
-    "hoursTitle": "Availability",
-    "hoursText": "Contact us on WhatsApp to check availability for your requested time."
+    "whatsappSubtitle": "The fastest way to book an appointment or ask a question."
   },
   "footer": {
     "tagline": "Bringing Healthcare to Your Doorstep",

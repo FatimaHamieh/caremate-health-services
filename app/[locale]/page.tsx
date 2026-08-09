@@ -1,45 +1,37 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { ArrowRight, MessageCircle } from 'lucide-react';
 import type { Locale } from '@/i18n/request';
 import { siteConfig } from '@/content/site-config';
-import { aboutParagraphs, vision } from '@/content/about';
+import { aboutParagraphs } from '@/content/about';
+import { whyChooseUs } from '@/content/whyChooseUs';
 import { nursingServices, wellnessServices } from '@/content/services';
 import { founder } from '@/content/founder';
 import { buildWhatsAppLink } from '@/lib/whatsapp';
+import { getServerOrigin } from '@/lib/site-url';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
 import { Hero } from '@/components/home/Hero';
 import { ServiceTeaserGrid } from '@/components/home/ServiceTeaserGrid';
-import { TrustBand } from '@/components/home/TrustBand';
+import { WhyChooseGrid } from '@/components/home/WhyChooseGrid';
 
 export default async function HomePage({ params: { locale } }: { params: { locale: Locale } }) {
   unstable_setRequestLocale(locale);
   const t = await getTranslations('home');
   const common = await getTranslations('common');
   const teaserServices = [...nursingServices.slice(0, 2), ...wellnessServices.slice(0, 2)];
-  const whatsappHref = buildWhatsAppLink(siteConfig.whatsappDefaultMessage[locale]);
+  const pageUrl = `${getServerOrigin()}/${locale}`;
+  const whatsappHref = buildWhatsAppLink(siteConfig.whatsappDefaultMessage[locale], pageUrl);
 
   return (
     <div>
       <Hero
-        eyebrow={t('heroEyebrow')}
         tagline={siteConfig.tagline[locale]}
         heroCta={t('heroCta')}
         viewServices={common('viewAllServices')}
         whatsappHref={whatsappHref}
         locale={locale}
       />
-
-      {/* Trust band */}
-      <div className="relative z-10 mx-auto -mt-16 max-w-5xl px-4 sm:-mt-20 sm:px-6">
-        <TrustBand
-          stats={[
-            { icon: 'HeartHandshake', value: t('statsCareValue'), label: t('statsCareLabel'), sub: t('statsCareSub') },
-            { icon: 'Award', value: t('statsExperienceValue'), label: t('statsExperienceLabel'), sub: t('statsExperienceSub') },
-            { icon: 'MapPinned', value: t('statsAreaValue'), label: t('statsAreaLabel'), sub: t('statsAreaSub') },
-          ]}
-        />
-      </div>
 
       {/* About teaser */}
       <section className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
@@ -49,7 +41,7 @@ export default async function HomePage({ params: { locale } }: { params: { local
               {t('aboutEyebrow')}
             </span>
             <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
-              {siteConfig.brandName}
+              CareMate
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
               {aboutParagraphs[0][locale]}
@@ -63,12 +55,39 @@ export default async function HomePage({ params: { locale } }: { params: { local
             </Link>
           </AnimatedSection>
           <AnimatedSection delay={0.15}>
-            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-brand-500 to-brand-700 p-10 text-white shadow-xl">
-              <div className="absolute -top-10 -end-10 h-40 w-40 rounded-full bg-white/10 blur-2xl" />
-              <span className="text-6xl font-serif leading-none text-white/25">&ldquo;</span>
-              <p className="-mt-4 text-xl font-medium leading-relaxed">{vision[locale]}</p>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-xl">
+              <Image
+                src="/images/about-us.jpg"
+                alt={t('aboutEyebrow')}
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover"
+              />
             </div>
           </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Why choose us */}
+      <section className="py-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <AnimatedSection className="mx-auto max-w-2xl text-center">
+            <span className="inline-block rounded-full bg-coral-100 px-4 py-1 text-sm font-semibold text-coral-700 dark:bg-coral-900/30 dark:text-coral-300">
+              {t('whyChooseEyebrow')}
+            </span>
+            <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
+              {t('whyChooseTitle')}
+            </h2>
+            <p className="mt-4 text-lg text-slate-600 dark:text-slate-300">{t('whyChooseSubtitle')}</p>
+          </AnimatedSection>
+
+          <WhyChooseGrid
+            items={whyChooseUs.map((item) => ({
+              icon: item.icon,
+              title: item.title[locale],
+              description: item.description[locale],
+            }))}
+          />
         </div>
       </section>
 
@@ -104,8 +123,8 @@ export default async function HomePage({ params: { locale } }: { params: { local
         <AnimatedSection className="relative grid items-center gap-10 overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 to-brand-950 p-10 text-white sm:grid-cols-[auto,1fr] sm:p-14">
           <div className="pointer-events-none absolute -top-16 -start-16 h-64 w-64 rounded-full bg-brand-500/20 blur-3xl" />
           <div className="pointer-events-none absolute -bottom-20 -end-10 h-72 w-72 rounded-full bg-coral-500/10 blur-3xl" />
-          <div className="relative mx-auto flex h-28 w-28 items-center justify-center rounded-full bg-gradient-to-br from-brand-400 to-brand-600 text-4xl font-bold shadow-lg shadow-brand-900/40 ring-4 ring-white/10 sm:mx-0">
-            {founder.name.split(' ').map((n) => n[0]).join('')}
+          <div className="relative mx-auto h-48 w-48 shrink-0 overflow-hidden rounded-full shadow-lg shadow-brand-900/40 ring-4 ring-white/10 sm:mx-0">
+            <Image src="/images/founder.jpg" alt={founder.name} fill sizes="192px" className="object-cover" />
           </div>
           <div>
             <span className="text-sm font-semibold uppercase tracking-wide text-brand-300">
