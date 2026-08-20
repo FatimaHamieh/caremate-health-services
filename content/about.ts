@@ -3,7 +3,7 @@ import type { LocalizedText } from './types';
 export const aboutParagraphs: LocalizedText[] = [
   {
     en: 'CareMate is a trusted provider of professional home and community healthcare, dedicated to delivering compassionate, evidence-based care wherever it is needed. Created with a simple mission: to make high-quality healthcare more accessible by bringing clinical services directly to patients in the comfort of their homes.',
-    ar: 'CareMate هي جهة موثوقة متخصصة في تقديم خدمات الرعاية الصحية المهنية في المنزل والمجتمع، وتلتزم بتوفير رعاية إنسانية قائمة على الأدلة العلمية أينما دعت الحاجة. تأسست CareMate انطلاقًا من رسالة بسيطة: جعل الرعاية الصحية عالية الجودة أكثر سهولة في الوصول إليها، من خلال تقديم الخدمات السريرية مباشرة إلى المرضى، في راحة وأمان منازلهم.',
+    ar: 'CareMate هي جهة موثوقة متخصصة في تقديم خدمات الرعاية الصحية المنزلية، وتلتزم بتوفير رعاية إنسانية قائمة على الأدلة العلمية. تأسست CareMate انطلاقًا من رسالة بسيطة: جعل الرعاية الصحية عالية الجودة أكثر تواجدًا، من خلال تقديم الخدمات السريرية مباشرة إلى المرضى، في راحة وأمان منازلهم.',
     fr: "CareMate est un prestataire de confiance spécialisé dans les soins de santé professionnels à domicile et au sein de la communauté, engagé à offrir des soins bienveillants et fondés sur des données probantes, là où ils sont nécessaires. CareMate a été créée avec une mission simple : rendre les soins de santé de haute qualité plus accessibles en proposant des services cliniques directement aux patients, dans le confort et la sécurité de leur domicile.",
   },
   {
