@@ -11,11 +11,10 @@ export const siteConfig = {
     ar: 'نجلب الرعاية الصحية إلى باب منزلك',
     fr: 'Les soins de santé livrés à votre porte',
   } satisfies LocalizedText,
-  // TODO: replace with the real WhatsApp business number (include country code, digits only).
-  whatsappNumber: '96171421233',
+  whatsappNumber: '96171524786',
   whatsappDefaultMessage: {
     en: "Hi CareMate, I'd like to book a home healthcare visit.",
-    ar: 'مرحباً كير ميت، أرغب في حجز زيارة رعاية صحية منزلية.',
+    ar: 'مرحباً CareMate، أرغب في حجز زيارة رعاية صحية منزلية.',
     fr: "Bonjour CareMate, je souhaiterais réserver une visite de soins de santé à domicile.",
   } satisfies LocalizedText,
 };

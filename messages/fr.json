@@ -19,10 +19,10 @@
     "aboutCta": "En savoir plus sur nous",
     "whyChooseEyebrow": "Notre atout",
     "whyChooseTitle": "Pourquoi choisir CareMate ?",
-    "whyChooseSubtitle": "La différence que des soins à domicile compatissants et professionnels peuvent apporter.",
+    "whyChooseSubtitle": "L'impact qu'une prise en charge à domicile, professionnelle et bienveillante, peut avoir.",
     "servicesEyebrow": "Ce que nous offrons",
     "servicesTitle": "Des soins qui viennent à vous",
-    "servicesSubtitle": "Des soins infirmiers cliniques au coaching bien-être, notre équipe apporte des soins de santé professionnels directement chez vous.",
+    "servicesSubtitle": "Des soins infirmiers cliniques à l'accompagnement en matière de bien-être et de santé, notre équipe vous apporte des services de santé professionnels directement à domicile.",
     "founderEyebrow": "Rencontrez le fondateur",
     "founderCta": "Rencontrer toute l'équipe",
     "ctaTitle": "Prêt à vous sentir mieux, chez vous ?",
@@ -46,9 +46,9 @@
   "services": {
     "title": "Nos services",
     "eyebrow": "Comment nous aidons",
-    "subtitle": "Des services complets de soins infirmiers et de bien-être, livrés où que vous soyez.",
+    "subtitle": "Des services complets de soins infirmiers et de bien-être, où que vous soyez.",
     "nursingTitle": "Services infirmiers",
-    "wellnessTitle": "Services de bien-être et non infirmiers",
+    "wellnessTitle": "Services non infirmiers et bien-être",
     "bookThisService": "Réserver ce service",
     "comingSoon": "Bientôt disponible"
   },
@@ -56,10 +56,10 @@
     "title": "Notre équipe",
     "eyebrow": "Les personnes derrière CareMate",
     "founderTitle": "Rencontrez le fondateur",
-    "founderRole": "Fondateur et directeur clinique",
+    "founderRole": "Fondateur et Directeur clinique",
     "teamTitle": "Notre équipe de soins",
-    "teamSubtitle": "CareMate Health Services réunit un réseau de professionnels de santé expérimentés, dédiés à offrir des soins de haute qualité partout où le besoin se fait sentir.",
-    "teamIncludes": "Notre équipe comprend :"
+    "teamSubtitle": "CareMate Health Services rassemble un réseau de professionnels de santé expérimentés, engagés à fournir des soins de haute qualité là où ils sont nécessaires.",
+    "teamIncludes": "NOTRE ÉQUIPE COMPREND :"
   },
   "contact": {
     "title": "Contactez-nous",

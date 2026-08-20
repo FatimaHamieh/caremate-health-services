@@ -9,7 +9,7 @@ export function buildWhatsAppLink(message?: string, pageUrl?: string): string {
 
 export function buildServiceWhatsAppLink(serviceName: string, locale: Locale, pageUrl?: string): string {
   const messages: Record<Locale, string> = {
-    ar: `مرحباً كير ميت، أرغب في حجز خدمة: ${serviceName}`,
+    ar: `مرحباً CareMate، أرغب في حجز خدمة: ${serviceName}`,
     fr: `Bonjour CareMate, je souhaiterais réserver : ${serviceName}`,
     en: `Hi CareMate, I'd like to book: ${serviceName}`,
   };

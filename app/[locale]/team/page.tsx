@@ -25,10 +25,10 @@ export default async function TeamPage({ params: { locale } }: { params: { local
         <div className="mt-4 rounded-3xl bg-gradient-to-br from-slate-900 to-brand-950 p-8 text-white sm:p-12">
           <div className="flex flex-col items-start gap-8 sm:flex-row">
             <div className="relative h-40 w-40 shrink-0 overflow-hidden rounded-full ring-4 ring-white/10">
-              <Image src="/images/founder.jpg" alt={founder.name} fill sizes="160px" className="object-cover" />
+              <Image src="/images/founder.jpg" alt={founder.name[locale]} fill sizes="160px" className="object-cover" />
             </div>
             <div>
-              <h2 className="text-2xl font-bold sm:text-3xl">{founder.name}</h2>
+              <h2 className="text-2xl font-bold sm:text-3xl">{founder.name[locale]}</h2>
               <p className="mt-1 font-medium text-brand-300">{t('founderRole')}</p>
               <p className="mt-1 text-sm text-slate-300">{founder.credentials[locale]}</p>
               <div className="mt-6 space-y-4">

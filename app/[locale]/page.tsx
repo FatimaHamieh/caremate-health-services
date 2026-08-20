@@ -124,13 +124,13 @@ export default async function HomePage({ params: { locale } }: { params: { local
           <div className="pointer-events-none absolute -top-16 -start-16 h-64 w-64 rounded-full bg-brand-500/20 blur-3xl" />
           <div className="pointer-events-none absolute -bottom-20 -end-10 h-72 w-72 rounded-full bg-coral-500/10 blur-3xl" />
           <div className="relative mx-auto h-48 w-48 shrink-0 overflow-hidden rounded-full shadow-lg shadow-brand-900/40 ring-4 ring-white/10 sm:mx-0">
-            <Image src="/images/founder.jpg" alt={founder.name} fill sizes="192px" className="object-cover" />
+            <Image src="/images/founder.jpg" alt={founder.name[locale]} fill sizes="192px" className="object-cover" />
           </div>
           <div>
             <span className="text-sm font-semibold uppercase tracking-wide text-brand-300">
               {t('founderEyebrow')}
             </span>
-            <h3 className="mt-2 text-2xl font-bold sm:text-3xl">{founder.name}</h3>
+            <h3 className="mt-2 text-2xl font-bold sm:text-3xl">{founder.name[locale]}</h3>
             <p className="mt-1 text-brand-200">{founder.role[locale]}</p>
             <p className="mt-4 max-w-2xl text-slate-200">{founder.closingQuote[locale]}</p>
             <Link
