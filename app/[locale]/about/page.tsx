@@ -1,10 +1,22 @@
+import type { Metadata } from 'next';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import type { Locale } from '@/i18n/request';
+import { siteConfig } from '@/content/site-config';
+import { getAlternates } from '@/lib/seo';
 import { aboutParagraphs } from '@/content/about';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
 import { PageHeaderBackground } from '@/components/ui/PageHeaderBackground';
 import { ValuesGrid } from '@/components/about/ValuesGrid';
+
+export async function generateMetadata({ params: { locale } }: { params: { locale: Locale } }): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: 'about' });
+  return {
+    title: t('title'),
+    description: siteConfig.tagline[locale],
+    alternates: getAlternates('/about', locale),
+  };
+}
 
 export default async function AboutPage({ params: { locale } }: { params: { locale: Locale } }) {
   unstable_setRequestLocale(locale);

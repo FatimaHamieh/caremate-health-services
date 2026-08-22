@@ -6,6 +6,7 @@ import { getMessages, unstable_setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { locales, type Locale } from '@/i18n/request';
 import { siteConfig } from '@/content/site-config';
+import { siteUrl, getAlternates } from '@/lib/seo';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { WhatsAppFAB } from '@/components/layout/WhatsAppFAB';
@@ -19,10 +20,14 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
-export const metadata: Metadata = {
-  title: `${siteConfig.brandName} — ${siteConfig.tagline.en}`,
-  description: siteConfig.tagline.en,
-};
+export function generateMetadata({ params: { locale } }: { params: { locale: Locale } }): Metadata {
+  return {
+    metadataBase: new URL(siteUrl),
+    title: `${siteConfig.brandName} — ${siteConfig.tagline[locale as Locale]}`,
+    description: siteConfig.tagline[locale as Locale],
+    alternates: getAlternates('', locale as Locale),
+  };
+}
 
 export default async function LocaleLayout({
   children,

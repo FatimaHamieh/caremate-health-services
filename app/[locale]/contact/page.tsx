@@ -1,12 +1,23 @@
+import type { Metadata } from 'next';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { MessageCircle } from 'lucide-react';
 import type { Locale } from '@/i18n/request';
 import { siteConfig } from '@/content/site-config';
+import { getAlternates } from '@/lib/seo';
 import { buildWhatsAppLink } from '@/lib/whatsapp';
 import { getServerOrigin } from '@/lib/site-url';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
 import { PageHeaderBackground } from '@/components/ui/PageHeaderBackground';
+
+export async function generateMetadata({ params: { locale } }: { params: { locale: Locale } }): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: 'contact' });
+  return {
+    title: t('title'),
+    description: t('subtitle'),
+    alternates: getAlternates('/contact', locale),
+  };
+}
 
 export default async function ContactPage({ params: { locale } }: { params: { locale: Locale } }) {
   unstable_setRequestLocale(locale);

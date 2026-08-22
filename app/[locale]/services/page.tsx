@@ -1,10 +1,21 @@
+import type { Metadata } from 'next';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { Stethoscope, Sparkles } from 'lucide-react';
 import type { Locale } from '@/i18n/request';
+import { getAlternates } from '@/lib/seo';
 import { nursingServices, wellnessServices } from '@/content/services';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { PageHeaderBackground } from '@/components/ui/PageHeaderBackground';
 import { ServiceGrid } from '@/components/services/ServiceGrid';
+
+export async function generateMetadata({ params: { locale } }: { params: { locale: Locale } }): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: 'services' });
+  return {
+    title: t('title'),
+    description: t('subtitle'),
+    alternates: getAlternates('/services', locale),
+  };
+}
 
 export default async function ServicesPage({ params: { locale } }: { params: { locale: Locale } }) {
   unstable_setRequestLocale(locale);

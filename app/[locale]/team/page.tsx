@@ -1,12 +1,23 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import type { Locale } from '@/i18n/request';
+import { getAlternates } from '@/lib/seo';
 import { founder } from '@/content/founder';
 import { teamRoles } from '@/content/team';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
 import { PageHeaderBackground } from '@/components/ui/PageHeaderBackground';
 import { TeamGrid } from '@/components/team/TeamGrid';
+
+export async function generateMetadata({ params: { locale } }: { params: { locale: Locale } }): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: 'team' });
+  return {
+    title: t('title'),
+    description: t('teamSubtitle'),
+    alternates: getAlternates('/team', locale),
+  };
+}
 
 export default async function TeamPage({ params: { locale } }: { params: { locale: Locale } }) {
   unstable_setRequestLocale(locale);
