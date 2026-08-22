@@ -20,7 +20,13 @@ function switchLocalePath(pathname: string, target: Locale) {
   return segments.join('/') || '/';
 }
 
-export function LanguageSwitcher({ className = '' }: { className?: string }) {
+export function LanguageSwitcher({
+  className = '',
+  variant = 'dropdown',
+}: {
+  className?: string;
+  variant?: 'dropdown' | 'inline';
+}) {
   const locale = useLocale() as Locale;
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -40,6 +46,26 @@ export function LanguageSwitcher({ className = '' }: { className?: string }) {
       document.removeEventListener('keydown', handleKey);
     };
   }, []);
+
+  if (variant === 'inline') {
+    return (
+      <div className={`flex items-center gap-2 ${className}`}>
+        {locales.map((loc) => (
+          <Link
+            key={loc}
+            href={switchLocalePath(pathname, loc)}
+            className={`rounded-full border px-3 py-1.5 text-sm font-medium transition-colors ${
+              loc === locale
+                ? 'border-brand-600 bg-brand-50 text-brand-700 dark:border-brand-500 dark:bg-brand-900/30 dark:text-brand-300'
+                : 'border-slate-200 text-slate-700 hover:border-brand-300 hover:text-brand-700 dark:border-slate-700 dark:text-slate-200'
+            }`}
+          >
+            {localeNames[loc]}
+          </Link>
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div ref={ref} className={`relative ${className}`}>

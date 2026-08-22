@@ -26,6 +26,12 @@ const darkModeLabel: Record<Locale, string> = {
   fr: 'Mode sombre',
 };
 
+const languageLabel: Record<Locale, string> = {
+  en: 'Language',
+  ar: 'اللغة',
+  fr: 'Langue',
+};
+
 export function Navbar() {
   const locale = useLocale() as Locale;
   const pathname = usePathname();
@@ -131,8 +137,11 @@ export function Navbar() {
                 <ThemeToggle />
               </div>
 
-              <div className="mt-1 px-3 py-1">
-                <LanguageSwitcher />
+              <div className="mt-2 flex items-center justify-between rounded-lg px-3 py-2.5">
+                <span className="text-sm font-medium text-slate-700 dark:text-slate-200">
+                  {languageLabel[locale]}
+                </span>
+                <LanguageSwitcher variant="inline" />
               </div>
             </div>
           </motion.div>
