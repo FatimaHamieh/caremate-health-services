@@ -11,6 +11,7 @@ export const siteConfig = {
     ar: 'نجلب الرعاية الصحية إلى باب منزلك',
     fr: 'Les soins de santé livrés à votre porte',
   } satisfies LocalizedText,
+  email: 'info@carematelb.com',
   whatsappNumber: '96171524786',
   whatsappDefaultMessage: {
     en: "Hi CareMate, I'd like to book a home healthcare visit.",

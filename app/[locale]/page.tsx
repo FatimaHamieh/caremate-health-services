@@ -68,29 +68,6 @@ export default async function HomePage({ params: { locale } }: { params: { local
         </div>
       </section>
 
-      {/* Why choose us */}
-      <section className="py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <AnimatedSection className="mx-auto max-w-2xl text-center">
-            <span className="inline-block rounded-full bg-coral-100 px-4 py-1 text-sm font-semibold text-coral-700 dark:bg-coral-900/30 dark:text-coral-300">
-              {t('whyChooseEyebrow')}
-            </span>
-            <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
-              {t('whyChooseTitle')}
-            </h2>
-            <p className="mt-4 text-lg text-slate-600 dark:text-slate-300">{t('whyChooseSubtitle')}</p>
-          </AnimatedSection>
-
-          <WhyChooseGrid
-            items={whyChooseUs.map((item) => ({
-              icon: item.icon,
-              title: item.title[locale],
-              description: item.description[locale],
-            }))}
-          />
-        </div>
-      </section>
-
       {/* Services teaser */}
       <section className="bg-slate-50 py-24 dark:bg-slate-900/40">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -115,6 +92,29 @@ export default async function HomePage({ params: { locale } }: { params: { local
               <ArrowRight className="h-4 w-4 rtl:rotate-180" />
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Why choose us */}
+      <section className="py-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <AnimatedSection className="mx-auto max-w-2xl text-center">
+            <span className="inline-block rounded-full bg-coral-100 px-4 py-1 text-sm font-semibold text-coral-700 dark:bg-coral-900/30 dark:text-coral-300">
+              {t('whyChooseEyebrow')}
+            </span>
+            <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
+              {t('whyChooseTitle')}
+            </h2>
+            <p className="mt-4 text-lg text-slate-600 dark:text-slate-300">{t('whyChooseSubtitle')}</p>
+          </AnimatedSection>
+
+          <WhyChooseGrid
+            items={whyChooseUs.map((item) => ({
+              icon: item.icon,
+              title: item.title[locale],
+              description: item.description[locale],
+            }))}
+          />
         </div>
       </section>
 

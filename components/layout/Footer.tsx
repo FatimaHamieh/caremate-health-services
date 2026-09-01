@@ -64,6 +64,12 @@ export function Footer() {
             <p className="mt-4 text-sm text-slate-600 dark:text-slate-300">
               {countryName[locale]}
             </p>
+            <a
+              href={`mailto:${siteConfig.email}`}
+              className="mt-2 block text-sm text-slate-600 hover:text-brand-600 dark:text-slate-300 dark:hover:text-brand-400"
+            >
+              {siteConfig.email}
+            </a>
           </div>
         </div>
 

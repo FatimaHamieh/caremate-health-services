@@ -66,7 +66,10 @@
     "eyebrow": "We're Here to Help",
     "subtitle": "Have a question or ready to book a service? Reach out on WhatsApp and our team will respond promptly.",
     "whatsappTitle": "Chat on WhatsApp",
-    "whatsappSubtitle": "The fastest way to book an appointment or ask a question."
+    "whatsappSubtitle": "The fastest way to book an appointment or ask a question.",
+    "emailTitle": "Email Us",
+    "emailSubtitle": "Prefer email? Send us a message and we'll get back to you shortly.",
+    "emailCta": "Send an Email"
   },
   "footer": {
     "tagline": "Bringing Healthcare to Your Doorstep",
