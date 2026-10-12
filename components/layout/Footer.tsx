@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 import { siteConfig } from '@/content/site-config';
+import { SocialLinks } from '@/components/ui/SocialLinks';
 import type { Locale } from '@/i18n/request';
 
 const links = [
@@ -70,6 +71,10 @@ export function Footer() {
             >
               {siteConfig.email}
             </a>
+            <h4 className="mt-6 text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+              {tf('followUs')}
+            </h4>
+            <SocialLinks className="mt-3" />
           </div>
         </div>
 

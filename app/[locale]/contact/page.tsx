@@ -9,6 +9,7 @@ import { getServerOrigin } from '@/lib/site-url';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
 import { PageHeaderBackground } from '@/components/ui/PageHeaderBackground';
+import { SocialLinks } from '@/components/ui/SocialLinks';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: Locale } }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'contact' });
@@ -72,6 +73,14 @@ export default async function ContactPage({ params: { locale } }: { params: { lo
             </div>
           </AnimatedSection>
         </div>
+
+        <AnimatedSection delay={0.3}>
+          <div className="mt-8 rounded-3xl border border-slate-200 bg-white p-10 text-center shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl dark:text-white">{t('followTitle')}</h2>
+            <p className="mt-2 text-slate-600 dark:text-slate-400">{t('followSubtitle')}</p>
+            <SocialLinks variant="large" className="mt-6 justify-center" />
+          </div>
+        </AnimatedSection>
       </div>
     </div>
   );

@@ -69,13 +69,16 @@
     "whatsappSubtitle": "The fastest way to book an appointment or ask a question.",
     "emailTitle": "Email Us",
     "emailSubtitle": "Prefer email? Send us a message and we'll get back to you shortly.",
-    "emailCta": "Send an Email"
+    "emailCta": "Send an Email",
+    "followTitle": "Follow Us",
+    "followSubtitle": "Stay connected with CareMate for health tips, news and updates."
   },
   "footer": {
     "tagline": "Bringing Healthcare to Your Doorstep",
     "quickLinks": "Quick Links",
     "servicesLinks": "Services",
     "getInTouch": "Get in Touch",
+    "followUs": "Follow Us",
     "rights": "All rights reserved."
   },
   "fab": {

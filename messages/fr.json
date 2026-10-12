@@ -69,13 +69,16 @@
     "whatsappSubtitle": "Le moyen le plus rapide de prendre rendez-vous ou de poser une question.",
     "emailTitle": "Envoyez-nous un e-mail",
     "emailSubtitle": "Vous préférez l'e-mail ? Envoyez-nous un message et nous vous répondrons rapidement.",
-    "emailCta": "Envoyer un e-mail"
+    "emailCta": "Envoyer un e-mail",
+    "followTitle": "Suivez-nous",
+    "followSubtitle": "Restez connecté avec CareMate pour des conseils santé, des actualités et des nouveautés."
   },
   "footer": {
     "tagline": "Les soins de santé livrés à votre porte",
     "quickLinks": "Liens rapides",
     "servicesLinks": "Services",
     "getInTouch": "Contactez-nous",
+    "followUs": "Suivez-nous",
     "rights": "Tous droits réservés."
   },
   "fab": {

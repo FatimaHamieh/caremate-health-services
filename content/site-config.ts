@@ -12,6 +12,11 @@ export const siteConfig = {
     fr: 'Les soins de santé livrés à votre porte',
   } satisfies LocalizedText,
   email: 'info@carematelb.com',
+  socialLinks: {
+    linkedin: 'https://www.linkedin.com/company/caremate-health-services/',
+    facebook: 'https://www.facebook.com/share/1MGcCh3sc9/',
+    instagram: 'https://www.instagram.com/carematelb/',
+  },
   whatsappNumber: '96171524786',
   whatsappDefaultMessage: {
     en: "Hi CareMate, I'd like to book a home healthcare visit.",
